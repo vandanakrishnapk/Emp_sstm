@@ -1,0 +1,11 @@
+table,tr,td,th
+{
+    border:2px solid green;
+      border-collapse: collapse;  
+background-color:cadetblue;
+color: white;
+align-items: center;
+margin-left: 220px;
+margin-top: 150px;   
+font-size: large;
+}

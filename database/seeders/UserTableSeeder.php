@@ -22,6 +22,9 @@ class UserTableSeeder extends Seeder
         'type'=>'admin',
         'username'=>'sanal@gmail.com',
         'password'=>bcrypt('123456'),
+        'address'=>'mavoor,Kozhikode',
+        'qualification'=>'M.Tech',
+
     ]);
     User::create([
         'name'=>'Neethu',
@@ -30,6 +33,8 @@ class UserTableSeeder extends Seeder
         'type'=>'HR',
         'username'=>'neethu@gmail.com',
         'password'=>bcrypt('11111'),
+        'address'=>'padanilam,Kozhikode',
+        'qualification'=>'B.Tech',
     ]);
     User::create([
         'name'=>'Sreedil',
@@ -38,6 +43,8 @@ class UserTableSeeder extends Seeder
         'type'=>'Employee',
         'username'=>'sreedil@gmail.com',
         'password'=>bcrypt('22222'),
+        'address'=>'Mukkam,Kozhikode',
+        'qualification'=>'BCA',
     ]);
     }
 }

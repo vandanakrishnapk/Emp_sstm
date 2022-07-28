@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('type');
             $table->string('username');
             $table->string('password');
+            $table->string('address');
+            $table->string('qualification');
             $table->timestamps();
         });
     }
