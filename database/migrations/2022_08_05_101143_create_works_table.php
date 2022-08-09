@@ -13,14 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('leaves', function (Blueprint $table) {
-            $table->bigIncrements('leave_id');
-            $table->integer('user_id');
-            $table->date('leave_date');
+        Schema::create('works', function (Blueprint $table) {
+            $table->id();
+            $table->string('work');
             $table->timestamps();
         });
     }
-           
 
     /**
      * Reverse the migrations.
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('leaves');
+        Schema::dropIfExists('works');
     }
 };

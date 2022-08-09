@@ -9,6 +9,18 @@ input[type=text], select {
   border-radius: 4px;
   box-sizing: border-box;
 }
+
+
+input[type=datetime-local], select {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  margin-left: 100px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
 input[type=email], select {
     width: 30%;
     padding: 12px 20px;
@@ -29,11 +41,30 @@ input[type=email], select {
     border-radius: 4px;
     box-sizing: border-box;
   }
-  
+  input[type=date], select {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    margin-left: 100px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  input[type=time], select {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    margin-left: 100px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
 
 input[type=submit] {
   width: 10%;
-  background-color: #4CAF50;
+  background-color: #f07171;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -42,6 +73,7 @@ input[type=submit] {
   border-radius: 4px;
   cursor: pointer;
 }
+
 input[type=password], select {
   width: 30%;
   padding: 12px 20px;
@@ -55,12 +87,12 @@ input[type=password], select {
 }
 
 input[type=submit]:hover {
-  background-color: #45a049;
+  background-color: maroon;
 }
 
 div {
   border-radius: 5px;
-  background-color: #f56b6b;
+  background-color: #dab6b6;
   padding: 20px;
 }
 h3
@@ -74,6 +106,6 @@ label
   display: inline-block;
   width: 230px;
   text-align: left;
-  color:white;
+  color:maroon;
   font-size: large;
 }

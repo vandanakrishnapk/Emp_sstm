@@ -83,11 +83,11 @@ body
   <a href="{{route('about')}}">About</a>
   <a href="{{route('contact')}}">contact</a>
   <a href="{{route('HRdashboard')}}">view HR</a>
-  <a href=""> view Employee</a>
-  <a href="">HR salary</a>  
-  <a href="">Employee salary</a> 
+  <a href="{{route('viewemp')}}"> view Employee</a> 
+  <a href="{{route('viewsaladmin')}}">view_salary</a> 
   <a href="">leave request(HR)</a>
-  <a href="">Add salary(HR)</a>
+  <a href="{{route('givework')}}">Add project</a>
+  <a href="{{route('viewwork')}}">view_work</a>
   <a href="{{route('dologout')}}">Logout</a>
 </div>
 

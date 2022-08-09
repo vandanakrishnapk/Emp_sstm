@@ -83,10 +83,12 @@ body
   <a href="{{route('about')}}">About</a>
   <a href="{{route('contact')}}">contact</a>
   <a href="{{route('addemp')}}">Add Employee</a>
-  <a href="">Add salary</a>
-  <a href="">view salary</a>  
-  <a href="">view leave request</a> 
-  <a href="">Add leave request</a>
+  <a href="{{route('viewemp')}}">View Employee</a>
+  <a href="{{route('addsal')}}">Add salary</a>
+  <a href="{{route('viewempsal')}}">view employee salary</a>
+  <a href="{{route('viewsal')}}">view salary</a>  
+  <a href="{{route('viewleave')}}">view leave request</a> 
+  <a href="">send leave request</a>
   <a href="{{route('hrlogout')}}">Logout</a>
 </div>
 <script>

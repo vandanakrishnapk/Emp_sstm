@@ -82,10 +82,10 @@ body
   <a href="{{route('home')}}">Home</a>
   <a href="{{route('about')}}">About</a>
   <a href="{{route('contact')}}">contact</a>
-  <a href="">View salary</a>
-  <a href="">Request leave</a>
-  <a href="">worksheet update</a>  
-  <a href="">profile</a> 
+  <a href="{{route('viewsal')}}">View salary</a>
+  <a href="{{route('emp_req')}}">send leave request</a>
+  <a href="{{route('addworksheet')}}">Add worksheet</a>  
+  <a href="{{route('viewpro')}}">view profile</a> 
   <a href="{{route('emplogout')}}">Logout</a>
 </div>
 

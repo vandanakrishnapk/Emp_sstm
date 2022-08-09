@@ -23,10 +23,10 @@
 
     <label id="a">Enter employee Type</label>
     <select name="ty">
-    <option>Teacher</option>
-    <option>office staff</option>
-    <option>vice principal</option>
-    <option>Financial Manager</option>
+    <option>site engineer</option>
+    <option>project engineer</option>
+    <option>sales manager</option>
+    <option>financial manager</option>
     </select>
 <br>
     <label id="a">Enter employee address</label>

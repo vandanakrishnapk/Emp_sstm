@@ -13,11 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('salaries', function (Blueprint $table) {
-            $table->bigIncrements('salary_id');
-            $table->integer('emp_id');
+        Schema::create('worksheets', function (Blueprint $table) {
+            $table->bigincrements('work_id');
+            $table->unsignedbiginteger('emp_id');
+            // $table->foreign('emp_id')->references('id')->on('users');
             $table->date('date');
-            $table->bigInteger('salary');
+            $table->string('work');
+            $table->time('start_time');
+            $table->time('end_time');
+            $table->string('status');
             $table->timestamps();
         });
     }
@@ -29,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('salaries');
+        Schema::dropIfExists('worksheets');
     }
 };

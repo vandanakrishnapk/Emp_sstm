@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('worksheets', function (Blueprint $table) {
-            $table->bigIncrements('worksheet_id');
-            $table->integer('emp_id');
-            $table->date('start_time');
-            $table->date('end_time');
+        Schema::create('leaves', function (Blueprint $table) {
+            $table->bigincrements('leave_id');
+            $table->unsignedbiginteger('emp_id');
+            $table->foreign('emp_id')->references('id')->on('users');
+            $table->date('date');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('worksheets');
+        Schema::dropIfExists('leaves');
     }
 };
