@@ -17,7 +17,7 @@ return new class extends Migration
         Schema::create('salaries', function (Blueprint $table) {
             $table->bigincrements('salary_id');
             $table->unsignedbiginteger('emp_id');
-            $table->foreign('emp_id')->references('id')->on('users');
+            $table->foreign('emp_id')->references('id')->on('users')->onDelete('cascade');
             $table->date('date');
             $table->biginteger('salary');
             $table->timestamps();

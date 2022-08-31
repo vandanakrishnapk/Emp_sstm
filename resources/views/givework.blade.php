@@ -9,6 +9,11 @@
 <body>
     <form action="{{route('savework')}}" method="POST">
         @csrf
+        @if(Session::has('message'))
+    <div class="alert alert-success">
+        {{Session::get('message')}}
+    </div>
+@endif
         <div>
             <label>Enter work</label><br>
             <input type="text" name="wo" placeholder="work here" required><br>

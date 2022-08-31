@@ -19,7 +19,14 @@ input[type=text], select, textarea {
   margin-bottom: 16px;
   resize: vertical;
 }
-
+input[type=number], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
 input[type=submit] {
   background-color: #04AA6D;
   color: white;
@@ -73,19 +80,20 @@ input[type=submit]:hover {
       <img src="https://toptiersolutioncom.files.wordpress.com/2021/03/contact-us.png" style="width:100%">
     </div>
     <div class="column">
-      <form action="/action_page.php">
-        <label for="fname">First Name</label>
-        <input type="text" id="fname" name="firstname" placeholder="Your name..">
-        <label for="lname">Last Name</label>
-        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-        <label for="country">Country</label>
-        <select id="country" name="country">
-          <option value="australia">Australia</option>
-          <option value="canada">Canada</option>
-          <option value="usa">USA</option>
-        </select>
+      <form action="{{route('savecontact')}}" method="POST">
+        @csrf
+        <label for="fname">Name</label>
+        <input type="text" id="fname" name="name" placeholder="Your name.."><br>
+        <label for="lname">Phonenumber</label>
+        <input type="number" id="lname" name="ph" placeholder="Your last name.."><br>
+        <label for="country">District</label>
+        <select id="country" name="dis">
+          <option value="Kozhikode">Kozhikode</option>
+          <option value="Wayanad">Wayanad</option>
+          <option value="Kannur">Kannur</option>
+        </select><br>
         <label for="subject">Subject</label>
-        <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+        <textarea id="subject" name="su" placeholder="Write something.." style="height:170px"></textarea><br>
         <input type="submit" value="Submit">
       </form>
     </div>

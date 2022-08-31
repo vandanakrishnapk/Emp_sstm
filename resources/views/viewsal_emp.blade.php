@@ -12,17 +12,20 @@
     <div>
         <table class="table table-striped">
            <tr>
-            <th>salary_id</th>
+            
             <th>emp_id</th>
             <th>date</th>
+            <th>name</th>
+            <th>mobile</th>
             <th>salary amount</th> 
            </tr>
-           @foreach($emp as $emps)
+           @foreach($usr as $usrs)
            <tr>
-            <td>{{$emps->salary_id}}</td>
-            <td>{{$emps->emp_id}}</td>
-            <td>{{$emps->date}}</td>
-            <td>{{$emps->salary}}</td>
+            <td>{{$usrs->emp_id}}</td> 
+            <td>{{$usrs->date}}</td>
+            <td>{{$usrs->name}}</td>
+            <td>{{$usrs->mobile}}</td>
+            <td>{{$usrs->salary}}</td>
            </tr>
            @endforeach
         </table>

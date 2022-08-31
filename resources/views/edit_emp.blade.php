@@ -21,10 +21,10 @@
 
     <label id="a">Enter employee Type</label>
     <select name="ty">
-    <option value="{{$emp->type}}">Teacher</option>
-    <option value="{{$emp->type}}">office staff</option>
-    <option value="{{$emp->type}}">vice principal</option>
-    <option value="{{$emp->type}}">Financial Manager</option>
+    <option value="{{$emp->type}}">site engineer</option>
+    <option value="{{$emp->type}}">financial Manager</option>
+    <option value="{{$emp->type}}">sales manager</option>
+    <option value="{{$emp->type}}">project engineer</option>
     </select>
 <br>
     <label id="a">Enter employee address</label>

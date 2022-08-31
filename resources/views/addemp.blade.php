@@ -11,7 +11,6 @@
 <div align="center">
   <form action="{{route('empsave')}}" method="POST">
     @csrf   
-
     <label id="a">Enter employee Name</label>
     <input type="text" id="fname" name="na" placeholder="Name.."><br>
 

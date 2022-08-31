@@ -12,6 +12,11 @@
   
 <form action="{{route('saveleave')}}" method="POST">
   @csrf
+  @if(Session::has('message'))
+    <div class="alert alert-success">
+        {{Session::get('message')}}
+    </div>
+@endif
   <label>Select employee ID</label>
 <select name="se" class="form-control" required>
   @foreach($emp as $emps)

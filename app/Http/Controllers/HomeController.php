@@ -8,6 +8,7 @@ use App\Models\Salary;
 use App\Models\Leave;
 use App\Models\Worksheet;
 use App\Models\Work;
+use App\Models\Contact;
 use Illuminate\Database\Eloquent\Model;
 
 
@@ -23,9 +24,19 @@ class HomeController extends Controller
     }
     public function contact()
     {
+     
         return view('contact');
     }
-
+public function savecontact()
+{
+  Contact::create([
+    'name'=>request('name'),
+    'phonenumber'=>request('ph'),
+    'District'=>request('dis'),
+    'subject'=>request('su'),
+  ]);
+  return "we will contact you later";
+}
 
     public function adminlogin()
     {
@@ -167,7 +178,7 @@ public function viewemp()
 
 public function delete_emp($id)
 {
-User::find(decrypt($id))->delete();
+$user=User::find(decrypt($id))->delete();
 return redirect()->route('viewemp');
 }
 
@@ -210,22 +221,22 @@ public function update_emp()
         'date'=>$date,
         'salary'=>$salary
     ]);
- return "salary submitted";
+ return redirect()->route('addsal')->with('message',"salary added");
   }
   public function viewsal()
   {
     $sal=auth()->User();
     $empid=$sal->id;
-    // return $empid;
+    $em=User::where('id',$empid)->first();
     $emp=Salary::where('emp_id',$empid)->get();
     // return $emp->emp_id;
     // return $emp[0]->emp_id;
-    return view('viewsal',compact('emp'));    
+    return view('viewsal',compact('emp','em'));    
   }
   public function viewempsal()
   {
-    $emp=Salary::all();
-    return view('viewsal_emp',compact('emp'));
+    $usr=User::join('salaries','salaries.emp_id','=','users.id')->get();
+    return view('viewsal_emp',compact('usr'));
   }
   public function viewsaladmin()
   {
@@ -247,17 +258,12 @@ public function updatesal()
   
   $uid=request('u_id');
   $emp=Salary::find($uid);
-  return $emp;
   $emp->update([
     'date'=>request('da'),
     'salary'=>request('sa'),
   ]);
   return redirect()->route('viewsaladmin');
 }
-
-
-
-
 
   public function editpro($id)
   {
@@ -303,13 +309,30 @@ public function updatesal()
         'emp_id'=>$empid,
         'date'=>$date,
     ]);
-    return "submitted";
+    return redirect()->route('emp_req')->with('message',"leave request added");
   }
   public function viewleave()
   {
     $leave=Leave::all();
-    return view('viewleave',compact('leave'));
+    $user=User::all();
+    $users=Leave::where('emp_id','id')->get();
+    return view('viewleave',compact('leave','users'));
   }
+public function hr_req()
+{
+  $hr=Leave::where('emp_id','2')->get();
+  $empid=$hr[0]->emp_id;
+  // return $hr;
+  // return $empid;
+  $emps=User::where('id',$empid)->get();
+  // return $emps[0]->id;
+  // return $emp;
+  // return $emps;
+  return view('viewleavehr',compact('hr','emps'));
+}
+
+
+
 
   public function addworksheet()
   {
@@ -353,7 +376,9 @@ public function savework()
   Work::create([
     'work'=>request('wo'),
   ]);
-  return "work submitted";
+  return redirect()->route('givework')->with('message',"work submitted");
 }  
+
+
 }
 

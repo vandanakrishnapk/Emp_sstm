@@ -11,13 +11,15 @@ return new class extends Migration
      *
      * @return void
      */
+   
     public function up()
     {
-        Schema::create('leaves', function (Blueprint $table) {
-            $table->bigincrements('leave_id');
-            $table->unsignedbiginteger('emp_id');
-            $table->foreign('emp_id')->references('id')->on('users')->onDelete('cascade');
-            $table->date('date');
+        Schema::create('contacts', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->biginteger('phonenumber');
+            $table->string('District');
+            $table->string('subject');
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('leaves');
+        Schema::dropIfExists('contacts');
     }
 };

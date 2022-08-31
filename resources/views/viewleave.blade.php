@@ -11,15 +11,15 @@
 </head>
 <body>
     <div>
-        <table>
+        <table class="table table-striped">
            <tr>
-            <th>leave_id</th>
+            <th>Slno</th>
             <th>emp_id</th>
             <th>date</th>
            </tr>
            @foreach($leave as $leaves)
            <tr>
-            <td>{{$leaves->leave_id}}</td>
+            <td>{{$loop->iteration}}</td>
             <td>{{$leaves->emp_id}}</td>
             <td>{{$leaves->date}}</td>
            </tr>

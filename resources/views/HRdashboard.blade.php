@@ -88,7 +88,7 @@ body
   <a href="{{route('viewempsal')}}">view employee salary</a>
   <a href="{{route('viewsal')}}">view salary</a>  
   <a href="{{route('viewleave')}}">view leave request</a> 
-  <a href="">send leave request</a>
+  <a href="{{route('emp_req')}}">send leave request</a>
   <a href="{{route('hrlogout')}}">Logout</a>
 </div>
 <script>

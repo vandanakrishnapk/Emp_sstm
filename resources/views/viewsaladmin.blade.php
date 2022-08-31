@@ -24,7 +24,7 @@
             <td>{{$sals->emp_id}}</td>
             <td>{{$sals->date}}</td>
             <td>{{$sals->salary}}</td>
-            <td><a href="{{route('editsal',encrypt($sals->id))}}" class="btn btn-primary" role="button">Edit</a></td>
+            <td><a href="{{route('editsal',encrypt($sals->salary_id))}}" class="btn btn-primary" role="button">Edit</a></td>
             <td><a href="{{route('deletesal',encrypt($sals->salary_id))}}" class="btn btn-danger" role="button">Delete</td>
            </tr>
            @endforeach
